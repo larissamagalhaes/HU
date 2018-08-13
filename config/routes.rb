@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/about' => 'home#about'
 
   post '/questions' => 'home#temp'
+  post '/anwsers' => 'home#temp'
+
 
   get '/questions/:id' => 'home#question'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
