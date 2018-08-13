@@ -7,55 +7,24 @@
 
 <div class="list-style">
   <div style="margin:16px">
+    <% @questions.each do |q| %>
     <div class="media">
-      <div class="align-self-start mr-3">
+      <div class="align-self-center mr-3">
         <a href="#">
-          <img class="media-object" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/balance-7-84171.png" width="64" height="64">
+          <img class="media-object" src="<%= q.gravatar %>">
         </a>
       </div>
-      <div class="list-unstyled">
+      <div class="list-unstyled" style="margin-top: 4px; margin-bottom: 4px">
         <div class="media-body">
-          <h4 class="mt-0 mb-1">user@email.com asked:</h4>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          <h5 class="mt-0 mb-1"><%= q.email %> asked:</h5>
+          <%= q.body %>
         </div>
-        <div class="mt-0 mb-1" style="margin-top:8px">
-          <a href="/questions/4" class="btn btn-success btn-sm">View Answers</a>
+        <div><%= time_ago_in_words q.created_at %> ago</div>
+        <div style="margin-top: 4px; margin-bottom: 2px">
+          <a href="<%= question_path(q) %>" class="btn btn-success btn-sm">View Answers</a>
         </div>
       </div>
     </div>
-
-    <div class="media">
-      <div class="align-self-start mr-3">
-        <a href="#">
-          <img class="media-object" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/balance-7-84171.png" width="64" height="64">
-        </a>
-      </div>
-      <div class="list-unstyled">
-        <div class="media-body">
-          <h4 class="mt-0 mb-1">user@email.com asked:</h4>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-        </div>
-        <div class="mt-0 mb-1" style="margin-top:8px">
-          <a href="/questions/4" class="btn btn-success btn-sm">View Answers</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="media">
-      <div class="align-self-start mr-3">
-        <a href="#">
-          <img class="media-object" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/balance-7-84171.png" width="64" height="64">
-        </a>
-      </div>
-      <div class="list-unstyled">
-        <div class="media-body">
-          <h4 class="mt-0 mb-1">user@email.com asked:</h4>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-        </div>
-        <div class="mt-0 mb-1" style="margin-top:8px">
-          <a href="/questions/4" class="btn btn-success btn-sm">View Answers</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <% end %>
+ </div>
 </div>

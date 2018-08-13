@@ -1,0 +1,38 @@
+<div class="media bg-gradient-info"style="margin:16px;">
+  <div class="align-self-center mr-3" style="margin:4px">
+    <a href="#">
+      <img class="media-object" src="<%= @question.gravatar %>">
+    </a>
+  </div>
+  <div class="list-unstyled">
+    <div class="media-body">
+      <h4 class="mt-0 mb-1"><%= @question.email %> asked:</h4>
+      <%= @question.body %>
+    </div>
+  </div>
+</div>
+
+<div style="height:1px; background-color: #e1e1e1; margin-bottom: 16px"></div>
+<div class="media" style="margin:16px">
+    <button type="button" class="btn btn-success btn-small" data-toggle="modal" data-target="#new-answer-modal">Submit new answer</a>
+</div>
+
+<%= render 'home/new_answer_form'%>
+
+
+<div class="list-unstyled" style="margin:16px">
+
+<% @question.answers.each do |answer| %>
+  <div class="media">
+    <div class="align-self-start mr-3">
+      <a href="#">
+        <img class="media-object" src="<%= answer.gravatar %>">
+      </a>
+    </div>
+      <div class="media-body">
+        <h4 class="mt-0 mb-1"><%= answer.email %> answered:</h4>
+        <%= answer.body %>
+      </div>
+    </div>
+<% end %>
+</div>

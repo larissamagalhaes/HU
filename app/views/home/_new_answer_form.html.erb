@@ -8,15 +8,16 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-        <%= form_for :answer, url: '/anwsers', html: { class: 'form-horizontal' } do %>
-      <div class="modal-body">
+        <%= form_for :answer, url: '/answers', html: { class: 'form-horizontal' } do %>
+        <input type="hidden" name="answer[question_id]" value="<%= @question.id %>"</input>
+        <div class="modal-body">
   <div class="form-group">
     <label for="inputEmail">Email</label>
-    <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email" required>
+    <input type="email" class="form-control" name="answer[email]" id="inputEmail" placeholder="Email" required>
   </div>
   <div class="form-group">
     <label for="inputQuestion">Question</label>
-      <textarea class="form-control" type="text" name="answer_body" id="inputAnswer" placeholder="What is your answer?" required></textarea>
+      <textarea class="form-control" type="text" name="answer[body]" id="inputAnswer" placeholder="What is your answer?" required></textarea>
     </div>
       </div>
       <div class="modal-footer">
