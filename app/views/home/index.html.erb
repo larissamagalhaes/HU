@@ -1,20 +1,19 @@
-<div class="well" style="margin:16px;">
+<div class="card">
+  <div class="card-body">
     <h4> The Universe is the totality of everything that exists, has existed, or ever will exist.</h4>
     <p> This Q&amp;A site is dedicated to questions about the history of the Universe</p>
+  </div>
 </div>
 
-<div style="height:1px; background-color: #e1e1e1; margin-bottom: 16px"></div
-
-<div class="list-style">
-  <div style="margin:16px">
+  <div class="list-unstyled">
     <% @questions.each do |q| %>
-    <div class="media">
+    <div class="media" style="margin:16px">
       <div class="align-self-center mr-3">
         <a href="#">
           <img class="media-object" src="<%= q.gravatar %>">
         </a>
       </div>
-      <div class="list-unstyled" style="margin-top: 4px; margin-bottom: 4px">
+      <div class="list-unstyled">
         <div class="media-body">
           <h5 class="mt-0 mb-1"><%= q.email %> asked:</h5>
           <%= q.body %>
@@ -26,5 +25,10 @@
       </div>
     </div>
   <% end %>
+
+  <% if @questions.empty? %>
+    <div class="alert alert-info">Nothing here yet, be the first to ask?</div>
+  <% end %>
+
  </div>
 </div>

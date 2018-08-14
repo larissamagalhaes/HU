@@ -2,10 +2,8 @@
 
 one:
   email: MyString
-  string: MyString
   body: MyText
 
 two:
   email: MyString
-  string: MyString
   body: MyText
