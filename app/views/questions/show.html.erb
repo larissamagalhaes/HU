@@ -20,10 +20,9 @@
 <%= render 'home/new_answer_form'%>
 
 
-<div class="list-unstyled" style="margin:16px">
-
-<% @question.answers.each do |answer| %>
-  <div class="media">
+<div class="list-unstyled">
+<% @answers.each do |answer| %>
+  <div class="media" style="margin:16px">
     <div class="align-self-start mr-3">
       <a href="#">
         <img class="media-object" src="<%= answer.gravatar %>">
@@ -32,6 +31,7 @@
       <div class="media-body">
         <h4 class="mt-0 mb-1"><%= answer.email %> answered:</h4>
         <%= answer.body %>
+        <div><%= time_ago_in_words answer.created_at %> ago</div>
       </div>
     </div>
 <% end %>
