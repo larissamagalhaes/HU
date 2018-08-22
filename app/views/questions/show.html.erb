@@ -13,12 +13,11 @@
 </div>
 
 <div style="height:1px; background-color: #e1e1e1; margin-bottom: 16px"></div>
-<div class="media" style="margin:16px">
-    <button type="button" class="btn btn-success btn-small" data-toggle="modal" data-target="#new-answer-modal">Submit new answer</a>
+<div style="margin:16px">
+    <button type="button" class="btn btn-success btn-small" data-toggle="modal" data-target="#new-answer-modal">Submit new answer</button>
 </div>
 
 <%= render 'home/new_answer_form'%>
-
 
 <div class="list-unstyled">
 <% @answers.each do |answer| %>
