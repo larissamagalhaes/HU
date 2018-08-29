@@ -8,7 +8,7 @@ def create
 
   session[:current_user_email] = answer.email
 
-  redirect_to question
+  redirect_to question 
 end
 
 private
