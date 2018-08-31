@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/about' => 'home#about'
 
   post '/questions' => 'home#temp'
+  delete '/questions' => 'home#index'
   post '/anwsers' => 'home#temp'
 
 
